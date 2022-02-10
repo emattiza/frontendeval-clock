@@ -58,9 +58,7 @@ subscriptions _ =
 viewTimeAnalog : Time.Zone -> Time.Posix -> Html msg
 viewTimeAnalog zone time =
     svg
-        [ width "120"
-        , height "120"
-        , viewBox "0 0 120 120"
+        [ viewBox "0 0 120 120"
         ]
         (viewClock zone time)
 
@@ -75,11 +73,46 @@ viewClock zone time =
         , strokeWidth "1"
         ]
         []
+    , viewGrads
+    , viewGradMins
     , viewHand Hour zone time
     , viewHand Minute zone time
     , viewHand Second zone time
-    , viewGrads
     ]
+
+
+viewGradMins : Svg msg
+viewGradMins =
+    let
+        deg hr =
+            hr
+                |> toFloat
+                |> (\x -> x / 60 * 360)
+                |> round
+                |> String.fromInt
+
+        tick hr =
+            rect
+                [ width "2"
+                , height "2"
+                , x "59"
+                , y "12"
+                , rx "1"
+                , ry "1"
+                , fill "white"
+                , transform ("rotate(" ++ deg hr ++ ",60,60)")
+                ]
+                []
+    in
+    g
+        []
+        (List.map
+            tick
+            (List.filter
+                (\x -> not <| remainderBy 5 x == 0)
+                (List.range 0 59)
+            )
+        )
 
 
 viewGrads : Svg msg

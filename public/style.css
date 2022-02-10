@@ -5,3 +5,9 @@
 body {
   box-sizing: border-box;
 }
+
+.container {
+  width: 60%;
+  height: 60%;
+  max-height: 80%;
+}
