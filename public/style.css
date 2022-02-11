@@ -7,7 +7,9 @@ body {
 }
 
 .container {
-  width: 60%;
-  height: 60%;
-  max-height: 80%;
+  @apply grid grid-cols-1 max-w-md mx-auto p-4
+}
+
+.digital-time {
+  @apply col-auto mx-auto p-4
 }
