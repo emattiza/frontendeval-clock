@@ -20,7 +20,7 @@
     "postcss": "8.4.13",
     "tailwindcss": "3.0.18",
     "vite": "2.7.10",
-    "vite-plugin-elm": "2.5.1"
+    "vite-plugin-elm": "2.6.1"
   },
   "dependencies": {
     "daisyui": "1.25.4"
