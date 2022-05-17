@@ -18,7 +18,7 @@
     "elm-test": "0.19.1-revision7",
     "elm-tooling": "1.7.0",
     "postcss": "8.4.13",
-    "tailwindcss": "3.0.18",
+    "tailwindcss": "3.0.24",
     "vite": "2.7.10",
     "vite-plugin-elm": "2.5.1"
   },
