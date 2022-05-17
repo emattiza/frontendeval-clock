@@ -23,6 +23,6 @@
     "vite-plugin-elm": "2.5.1"
   },
   "dependencies": {
-    "daisyui": "1.25.4"
+    "daisyui": "2.15.0"
   }
 }
